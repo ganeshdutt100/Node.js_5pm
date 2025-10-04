@@ -33,3 +33,13 @@ writeStream.on("finish", () => {
 // });
 
 // readStream.on("error", (err) => console.log(err));
+
+// Practice Tasks
+
+// Small text file create karo aur content write karo using fs.writeFile or fs.createWriteStream.
+
+// Us file ko read karo using fs.readFile aur console me print karo.
+
+// Large file create karo (ya koi existing large file le lo) aur stream ke through read karo chunk by chunk.
+
+// Readable stream se Writable stream me pipe karo aur file copy karo.
