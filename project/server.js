@@ -18,6 +18,30 @@ const server = http.createServer((req, res) => {
         res.end(data);
       }
     });
+  } else if (req.method === "POST" && req.url === "/submit") {
+    let body = "";
+
+    req.on("data", (chunk) => {
+      body += chunk.toString();
+      //   console.log(body);
+    });
+    req.on("end", () => {
+      const parsedData = querystring.parse(body);
+      const output = `Name  : ${parsedData.name} , Email : ${parsedData.email}\n`;
+      //   console.log(output);
+
+      fs.appendFile("data.txt", output, (err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.end("<h1>Data Submitted Successfully </h1>");
+        }
+      });
+    });
+  } else {
+    res.writeHead(404, { "Content-Type": "text/html" });
+    res.end("<h1>Page Not Found </h1>");
   }
 });
 
