@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <style>
+        /* Styles for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Styles for the form container */
+        form {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        /* Styles for the labels */
+        label {
+            display: block;
+            /* Makes the label take up the full width */
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Styles for the input fields */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            /* Adds space below the input */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            /* Includes padding and border in the element's total width and height */
+        }
+
+        /* Styles for the break tags, just to clear the floats/spacing if necessary (though not strictly needed here) */
+        br {
+            display: none;
+            /* Hides the original <br> tags as margin is used for spacing */
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        input[type="submit"]:active {
+            color: #ff6666;
+
+        }
+
+        input[type="submit"]:hover {
+            background-color: #171717;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/submit" method="POST">
+        <label for="name">Enter your name </label>
+        <input type="text" name="name" id="name">
+        <label for="email">Enter your email </label>
+        <input type="text" name="email" id="email">
+        <input type="submit">
+    </form>
+</body>
+
+</html>
