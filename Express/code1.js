@@ -8,7 +8,9 @@ app.get("/about", (req, res) => {
   res.send("i am about page ");
 });
 app.get("/contact", (req, res) => {
-  res.send("i am contact page ");
+  res.send(`
+    <h1>hey i am form </h1>
+    `);
 });
 
 app.listen(3000, () => {

@@ -2,10 +2,10 @@
   "name": "express",
   "version": "1.0.0",
   "description": "",
-  "main": "code1.js",
+  "main": "code2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon code1.js"
+    "start": "nodemon code2.js"
   },
   "keywords": [],
   "author": "",
