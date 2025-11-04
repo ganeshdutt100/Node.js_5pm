@@ -53,11 +53,11 @@ const app = express();
 //   },
 // ];
 
-const products = [
-  { id: 1, name: "phone", price: 40000 },
-  { id: 2, name: "laptop", price: 50000 },
-  { id: 3, name: "Bike", price: 200000 },
-];
+// const products = [
+//   { id: 1, name: "phone", price: 40000 },
+//   { id: 2, name: "laptop", price: 50000 },
+//   { id: 3, name: "Bike", price: 200000 },
+// ];
 
 // app.get("/user/:id", (req, res) => {
 //   //   res.send(req.params.id);
@@ -81,18 +81,32 @@ const products = [
 //   res.send(`user id is ${req.params.id} and name is ${req.params.name}`);
 // });
 
-app.get("/products", (req, res) => {
-  const { price } = req.query;
-  if (price) {
-    const output = products.filter((p) => p.price <= price);
-    res.json(output);
-  } else {
-    res.json(products);
-  }
-});
+// app.get("/products", (req, res) => {
+//   const { price } = req.query;
+//   if (price) {
+//     const output = products.filter((p) => p.price <= price);
+//     res.json(output);
+//   } else {
+//     res.json(products);
+//   }
+// });
 
-app.get("/search", (req, res) => {
-  res.send(req.query);
+// app.get("/search", (req, res) => {
+//   res.send(req.query);
+// });
+
+// app.all("/info", (req, res) => {
+//   res.send(`Request methods ${req.method} - this woks fo r all HTTP methods`);
+// });
+
+app.get("/", (req, res) => {
+  res.send("hello");
+});
+app.get("/about", (req, res) => {
+  res.send("hey i am about page ");
+});
+app.use((req, res) => {
+  res.status(404).send("page not found ❌");
 });
 
 app.listen(3000, () => {
