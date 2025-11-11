@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(57, 55, 55);
+  color: white;
+}
+.card {
+  width: 400px;
+  /* height: 400px; */
+  background-color: rgb(10, 10, 32);
+  padding: 30px;
+  border-radius: 40px;
+  text-align: center;
+  font-family: sans-serif;
+}
+.card p {
+  line-height: 1.5;
+}
