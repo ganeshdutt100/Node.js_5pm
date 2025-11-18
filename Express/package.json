@@ -5,7 +5,7 @@
   "main": "code4.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon code4.js"
+    "start": "nodemon code5.js"
   },
   "keywords": [],
   "author": "",
