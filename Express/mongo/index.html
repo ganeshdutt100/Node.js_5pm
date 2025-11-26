@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+     <h2>User Form</h2>
+    <input type="text" placeholder="Enter your name " id="username">
+
+    <input type="email" placeholder="Enter your email " id="email">
+
+        <p id="responseData">Loading...</p>
+    <button id="submit-btn" type="submit">Submit</button>
+   </pre>
+    <script>
+        async function sendData() {
+            const username = document.getElementById('username').value
+
+            const email = document.getElementById('email').value
+
+            const data = { username, email }
+            try {
+                const response = await fetch('http://localhost:3000/api/save', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                const result = await response.json()
+                document.getElementById('responseData').innerText = result.msg;
+                console.log(result);
+
+
+            } catch (err) {
+                console.error("Error : ", err)
+                document.getElementById('responseData').innerText = "Error Connecting to server ";
+            }
+
+        }
+    </script>
+</body>
+
+</html>
