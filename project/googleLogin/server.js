@@ -38,8 +38,15 @@ app.get(
 app.get("/profile", (req, res) => {
   res.send(`
     <h1>Welcome ${req.user.displayName}</h1>
+    <img src="${req.user.photos[0].value}">
+    <a href="/logout">Logout</a>
 
     `);
+});
+
+app.get("/logout", (req, res) => {
+  // req.logout();
+  res.redirect("/");
 });
 const PORT = 4000;
 app.listen(PORT, () => {
